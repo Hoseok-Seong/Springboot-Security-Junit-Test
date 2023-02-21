@@ -43,6 +43,10 @@ public class UserController {
 
         session.setAttribute("principal", principal);
 
+        if (session.getAttribute("principal") == null) {
+            return "redirect:/loginForm";
+        }
+
         return "redirect:/main";
     }
 

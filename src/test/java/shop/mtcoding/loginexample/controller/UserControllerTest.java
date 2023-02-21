@@ -47,8 +47,11 @@ public class UserControllerTest {
     public void join_test() throws Exception {
 
         // given
-
+        String requestBody = null;
         // when
+
+        assertNotNull(requestBody);
+        assertFalse(requestBody.isEmpty());
 
         ResultActions resultActions = mvc.perform(post("/join").content(requestBody)
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE));
