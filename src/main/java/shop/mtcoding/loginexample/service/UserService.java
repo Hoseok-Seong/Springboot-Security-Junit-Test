@@ -22,7 +22,8 @@ public class UserService {
     public void 가입하기(JoinReqDto joinReqDto) {
         try {
             String sha256Hash = HashEncoding.sha256(joinReqDto.getPassword());
-            userRepository.insert(joinReqDto.getUsername(), sha256Hash, joinReqDto.getEmail());
+            userRepository.insert(joinReqDto.getUsername(), sha256Hash,
+                    joinReqDto.getEmail());
         } catch (NoSuchAlgorithmException e) {
             System.err.println("알고리즘을 찾을 수 없습니다: " + e.getMessage());
         }
